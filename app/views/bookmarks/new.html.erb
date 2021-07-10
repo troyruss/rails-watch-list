@@ -1,0 +1,6 @@
+<div class="container mt-4">
+  <h1><%= @list.name.capitalize %></h1>
+  <h3>Create a new bookmark</h3>
+  <%= render 'form', bookmark: @bookmark %>
+  <p class="mt-4"><%= link_to "Go back", lists_path, class: "btn btn-outline-info" %></p>
+</div>

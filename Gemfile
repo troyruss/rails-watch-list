@@ -5,6 +5,7 @@ ruby '2.6.6'
 
 # Troy added gems
 gem 'autoprefixer-rails', '10.2.5'
+gem 'faker'
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'simple_form'
 

@@ -1,0 +1,13 @@
+<div class="container mt-4">
+  <h1>Movies</h1>
+  <ul class="list-group list-group-flush">
+    <% @movies.each do |movie| %>
+    <li class="list-group-item">
+      <%= image_tag movie.poster_url, alt: "movie poster" %>
+      <p><%= movie.title %></p>
+      <%= movie.overview %>
+      <%= movie.rating %>
+    </li>
+    <% end %>
+  </ul>
+</div>
