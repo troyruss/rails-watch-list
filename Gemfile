@@ -8,6 +8,7 @@ gem 'autoprefixer-rails', '10.2.5'
 gem 'faker'
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'simple_form'
+gem 'dotenv-rails', groups: [:development, :test]
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.0.4'
