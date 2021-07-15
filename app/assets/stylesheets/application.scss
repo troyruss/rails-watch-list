@@ -12,7 +12,84 @@
 @import "components/index";
 @import "pages/index";
 
+$light-grey: #8F8F8F;
+$dark-grey: #5D5D5D;
+
+.flexy {
+  flex-wrap: wrap;
+}
+
+// bookmarks (Refactor later)
 .img-thumbnail {
   width: 10%;
   margin-bottom: 4px;
+}
+
+.card-product {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 16px;
+  border-radius: 8px;
+}
+
+.card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 16px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+.card-product > .delete-me {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.fa-trash {
+  color: $light-grey;
+  transition: color .2s;
+  &:hover {
+    color: $dark-grey;
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  }
+}
+
+.card-product {
+  /* This section calls the slideInFromLeft animation we defined above */
+  animation: 1s cubic-bezier(.08,.48,.04,1) 0s 1 slideInFromRight;
 }

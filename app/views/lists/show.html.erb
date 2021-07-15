@@ -1,10 +1,20 @@
 <div class="container mt-4">
   <h1><%= @list.name %></h1>
+
+<div class="container mt-4 flexy">
   <% @bookmarks.each do |bookmark| %>
-  <img class="img-thumbnail" src="<%= bookmark.movie.poster_url %>" alt="<%= bookmark.movie.title %> poster">
-  <h4><%= bookmark.movie.title %> <%= link_to '☠️', bookmark_path(bookmark), method: :delete, data: { confirm: 'Are you sure you want to delete ' } %> </h4>
-  <p><%= bookmark.comment %> </p>
+    <div class="card-product">
+        <img src="<%= bookmark.movie.poster_url %>" alt="<%= bookmark.movie.title %> poster" />
+
+        <div class="card-product-infos">
+          <h2><%= bookmark.movie.title %></h2>
+          <p><strong>Comment: </strong><i><%= bookmark.comment %></i></p>
+        </div>
+        <h4 class="delete-me"><%= link_to(content_tag(:i, '', class: 'fas fa-trash'), bookmark_path(bookmark), method: :delete, data: { confirm: 'Are you sure you want to delete?' }) %> </h4>
+    </div>
   <% end %>
-  <%= link_to 'Create new bookmark', new_list_bookmark_path(@list), class: "btn btn-primary" %>
-  <p class="mt-4"> <%= link_to 'Back to lists', lists_path, class: "btn btn-outline-info" %> </p>
+  <div class="mt-4">
+    <%= link_to 'Create new bookmark', new_list_bookmark_path(@list), class: "btn btn-primary" %>
+    <p class="mt-2"> <%= link_to 'Back to lists', lists_path, class: "btn btn-outline-info" %> </p>
+  </div>
 </div>
